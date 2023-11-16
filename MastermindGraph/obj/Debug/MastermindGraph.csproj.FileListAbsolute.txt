@@ -1,0 +1,11 @@
+D:\MastermindGraph\mastermindGraph\MastermindGraph\bin\Debug\MastermindGraph.exe.config
+D:\MastermindGraph\mastermindGraph\MastermindGraph\bin\Debug\MastermindGraph.exe
+D:\MastermindGraph\mastermindGraph\MastermindGraph\bin\Debug\MastermindGraph.pdb
+D:\MastermindGraph\mastermindGraph\MastermindGraph\obj\Debug\MastermindGraph.csproj.AssemblyReference.cache
+D:\MastermindGraph\mastermindGraph\MastermindGraph\obj\Debug\MastermindGraph.csproj.SuggestedBindingRedirects.cache
+D:\MastermindGraph\mastermindGraph\MastermindGraph\obj\Debug\MastermindGraph.Form1.resources
+D:\MastermindGraph\mastermindGraph\MastermindGraph\obj\Debug\MastermindGraph.Properties.Resources.resources
+D:\MastermindGraph\mastermindGraph\MastermindGraph\obj\Debug\MastermindGraph.csproj.GenerateResource.cache
+D:\MastermindGraph\mastermindGraph\MastermindGraph\obj\Debug\MastermindGraph.csproj.CoreCompileInputs.cache
+D:\MastermindGraph\mastermindGraph\MastermindGraph\obj\Debug\MastermindGraph.exe
+D:\MastermindGraph\mastermindGraph\MastermindGraph\obj\Debug\MastermindGraph.pdb
