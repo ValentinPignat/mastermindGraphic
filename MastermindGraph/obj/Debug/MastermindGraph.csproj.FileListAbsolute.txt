@@ -9,3 +9,14 @@ D:\MastermindGraph\mastermindGraph\MastermindGraph\obj\Debug\MastermindGraph.csp
 D:\MastermindGraph\mastermindGraph\MastermindGraph\obj\Debug\MastermindGraph.exe
 D:\MastermindGraph\mastermindGraph\MastermindGraph\obj\Debug\MastermindGraph.pdb
 D:\MastermindGraph\mastermindGraph\MastermindGraph\obj\Debug\MastermindGraph.Main.resources
+D:\404 C#\MastermindGraph\bin\Debug\MastermindGraph.exe.config
+D:\404 C#\MastermindGraph\bin\Debug\MastermindGraph.exe
+D:\404 C#\MastermindGraph\bin\Debug\MastermindGraph.pdb
+D:\404 C#\MastermindGraph\obj\Debug\MastermindGraph.csproj.AssemblyReference.cache
+D:\404 C#\MastermindGraph\obj\Debug\MastermindGraph.csproj.SuggestedBindingRedirects.cache
+D:\404 C#\MastermindGraph\obj\Debug\MastermindGraph.Main.resources
+D:\404 C#\MastermindGraph\obj\Debug\MastermindGraph.Properties.Resources.resources
+D:\404 C#\MastermindGraph\obj\Debug\MastermindGraph.csproj.GenerateResource.cache
+D:\404 C#\MastermindGraph\obj\Debug\MastermindGraph.csproj.CoreCompileInputs.cache
+D:\404 C#\MastermindGraph\obj\Debug\MastermindGraph.exe
+D:\404 C#\MastermindGraph\obj\Debug\MastermindGraph.pdb
