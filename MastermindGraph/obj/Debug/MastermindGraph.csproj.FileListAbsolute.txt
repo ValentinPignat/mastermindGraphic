@@ -20,3 +20,14 @@ D:\404 C#\MastermindGraph\obj\Debug\MastermindGraph.csproj.GenerateResource.cach
 D:\404 C#\MastermindGraph\obj\Debug\MastermindGraph.csproj.CoreCompileInputs.cache
 D:\404 C#\MastermindGraph\obj\Debug\MastermindGraph.exe
 D:\404 C#\MastermindGraph\obj\Debug\MastermindGraph.pdb
+F:\MastermindGraph\mastermindGraph\MastermindGraph\bin\Debug\MastermindGraph.exe.config
+F:\MastermindGraph\mastermindGraph\MastermindGraph\bin\Debug\MastermindGraph.exe
+F:\MastermindGraph\mastermindGraph\MastermindGraph\bin\Debug\MastermindGraph.pdb
+F:\MastermindGraph\mastermindGraph\MastermindGraph\obj\Debug\MastermindGraph.csproj.AssemblyReference.cache
+F:\MastermindGraph\mastermindGraph\MastermindGraph\obj\Debug\MastermindGraph.csproj.SuggestedBindingRedirects.cache
+F:\MastermindGraph\mastermindGraph\MastermindGraph\obj\Debug\MastermindGraph.Main.resources
+F:\MastermindGraph\mastermindGraph\MastermindGraph\obj\Debug\MastermindGraph.Properties.Resources.resources
+F:\MastermindGraph\mastermindGraph\MastermindGraph\obj\Debug\MastermindGraph.csproj.GenerateResource.cache
+F:\MastermindGraph\mastermindGraph\MastermindGraph\obj\Debug\MastermindGraph.csproj.CoreCompileInputs.cache
+F:\MastermindGraph\mastermindGraph\MastermindGraph\obj\Debug\MastermindGraph.exe
+F:\MastermindGraph\mastermindGraph\MastermindGraph\obj\Debug\MastermindGraph.pdb
