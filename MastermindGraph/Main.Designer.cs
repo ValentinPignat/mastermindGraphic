@@ -36,7 +36,7 @@
             this.pBoxRed = new System.Windows.Forms.PictureBox();
             this.pBoxGreen = new System.Windows.Forms.PictureBox();
             this.pBoxYellow = new System.Windows.Forms.PictureBox();
-            this.pBoxWhite = new System.Windows.Forms.PictureBox();
+            this.pBoxOrange = new System.Windows.Forms.PictureBox();
             this.pBoxPurple = new System.Windows.Forms.PictureBox();
             this.pBoxCyan = new System.Windows.Forms.PictureBox();
             this.pnlGameControl = new System.Windows.Forms.Panel();
@@ -44,6 +44,9 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.pnlParam = new System.Windows.Forms.Panel();
+            this.cmbBoxColorPalette = new System.Windows.Forms.ComboBox();
+            this.cBoxUnique = new System.Windows.Forms.CheckBox();
+            this.cBoxEasy = new System.Windows.Forms.CheckBox();
             this.nudColorPoolSize = new System.Windows.Forms.NumericUpDown();
             this.lblColorPoolSize = new System.Windows.Forms.Label();
             this.nudCodeLength = new System.Windows.Forms.NumericUpDown();
@@ -59,14 +62,12 @@
             this.pnlCode = new System.Windows.Forms.Panel();
             this.ShowCode = new System.Windows.Forms.Button();
             this.btnRules = new System.Windows.Forms.Button();
-            this.cBoxEasy = new System.Windows.Forms.CheckBox();
-            this.cBoxUnique = new System.Windows.Forms.CheckBox();
             this.pnlColor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxBlack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxRed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxGreen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxYellow)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBoxWhite)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBoxOrange)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxPurple)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxCyan)).BeginInit();
             this.pnlGameControl.SuspendLayout();
@@ -88,7 +89,7 @@
             this.lblMastermind.AutoSize = true;
             this.lblMastermind.Font = new System.Drawing.Font("Impact", 40.25F);
             this.lblMastermind.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lblMastermind.Location = new System.Drawing.Point(238, 9);
+            this.lblMastermind.Location = new System.Drawing.Point(217, 17);
             this.lblMastermind.Name = "lblMastermind";
             this.lblMastermind.Size = new System.Drawing.Size(295, 66);
             this.lblMastermind.TabIndex = 109;
@@ -160,7 +161,7 @@
             this.pnlColor.Controls.Add(this.pBoxRed);
             this.pnlColor.Controls.Add(this.pBoxGreen);
             this.pnlColor.Controls.Add(this.pBoxYellow);
-            this.pnlColor.Controls.Add(this.pBoxWhite);
+            this.pnlColor.Controls.Add(this.pBoxOrange);
             this.pnlColor.Controls.Add(this.pBoxPurple);
             this.pnlColor.Controls.Add(this.pBoxCyan);
             this.pnlColor.Location = new System.Drawing.Point(467, 115);
@@ -216,17 +217,17 @@
             this.pBoxYellow.Tag = "0";
             this.pBoxYellow.Click += new System.EventHandler(this.ColorSelect);
             // 
-            // pBoxWhite
+            // pBoxOrange
             // 
-            this.pBoxWhite.BackColor = System.Drawing.Color.DarkOrange;
-            this.pBoxWhite.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pBoxWhite.Location = new System.Drawing.Point(35, 46);
-            this.pBoxWhite.Name = "pBoxWhite";
-            this.pBoxWhite.Size = new System.Drawing.Size(34, 34);
-            this.pBoxWhite.TabIndex = 87;
-            this.pBoxWhite.TabStop = false;
-            this.pBoxWhite.Tag = "4";
-            this.pBoxWhite.Click += new System.EventHandler(this.ColorSelect);
+            this.pBoxOrange.BackColor = System.Drawing.Color.DarkOrange;
+            this.pBoxOrange.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pBoxOrange.Location = new System.Drawing.Point(35, 46);
+            this.pBoxOrange.Name = "pBoxOrange";
+            this.pBoxOrange.Size = new System.Drawing.Size(34, 34);
+            this.pBoxOrange.TabIndex = 87;
+            this.pBoxOrange.TabStop = false;
+            this.pBoxOrange.Tag = "4";
+            this.pBoxOrange.Click += new System.EventHandler(this.ColorSelect);
             // 
             // pBoxPurple
             // 
@@ -300,6 +301,7 @@
             // 
             // pnlParam
             // 
+            this.pnlParam.Controls.Add(this.cmbBoxColorPalette);
             this.pnlParam.Controls.Add(this.cBoxUnique);
             this.pnlParam.Controls.Add(this.cBoxEasy);
             this.pnlParam.Controls.Add(this.nudColorPoolSize);
@@ -308,8 +310,44 @@
             this.pnlParam.Controls.Add(this.lblCodeLength);
             this.pnlParam.Location = new System.Drawing.Point(467, 391);
             this.pnlParam.Name = "pnlParam";
-            this.pnlParam.Size = new System.Drawing.Size(193, 165);
+            this.pnlParam.Size = new System.Drawing.Size(193, 213);
             this.pnlParam.TabIndex = 113;
+            // 
+            // cmbBoxColorPalette
+            // 
+            this.cmbBoxColorPalette.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.RecentlyUsedList;
+            this.cmbBoxColorPalette.FormattingEnabled = true;
+            this.cmbBoxColorPalette.Items.AddRange(new object[] {
+            "Forms",
+            "Colorblind",
+            "Pastel"});
+            this.cmbBoxColorPalette.Location = new System.Drawing.Point(20, 162);
+            this.cmbBoxColorPalette.Name = "cmbBoxColorPalette";
+            this.cmbBoxColorPalette.Size = new System.Drawing.Size(148, 21);
+            this.cmbBoxColorPalette.TabIndex = 110;
+            this.cmbBoxColorPalette.SelectedIndexChanged += new System.EventHandler(this.cmbBoxColorPalette_SelectedIndexChanged);
+            // 
+            // cBoxUnique
+            // 
+            this.cBoxUnique.AutoSize = true;
+            this.cBoxUnique.Location = new System.Drawing.Point(54, 121);
+            this.cBoxUnique.Name = "cBoxUnique";
+            this.cBoxUnique.Size = new System.Drawing.Size(104, 17);
+            this.cBoxUnique.TabIndex = 109;
+            this.cBoxUnique.Text = "No color repeats";
+            this.cBoxUnique.UseVisualStyleBackColor = true;
+            this.cBoxUnique.CheckedChanged += new System.EventHandler(this.cBoxUnique_CheckedChanged);
+            // 
+            // cBoxEasy
+            // 
+            this.cBoxEasy.AutoSize = true;
+            this.cBoxEasy.Location = new System.Drawing.Point(54, 87);
+            this.cBoxEasy.Name = "cBoxEasy";
+            this.cBoxEasy.Size = new System.Drawing.Size(79, 17);
+            this.cBoxEasy.TabIndex = 108;
+            this.cBoxEasy.Text = "Easy Mode";
+            this.cBoxEasy.UseVisualStyleBackColor = true;
+            this.cBoxEasy.CheckedChanged += new System.EventHandler(this.cBoxEasy_CheckedChanged);
             // 
             // nudColorPoolSize
             // 
@@ -477,35 +515,13 @@
             // 
             // btnRules
             // 
-            this.btnRules.Location = new System.Drawing.Point(502, 86);
+            this.btnRules.Location = new System.Drawing.Point(547, 67);
             this.btnRules.Name = "btnRules";
             this.btnRules.Size = new System.Drawing.Size(113, 23);
             this.btnRules.TabIndex = 123;
             this.btnRules.Text = "Rules";
             this.btnRules.UseVisualStyleBackColor = true;
             this.btnRules.Click += new System.EventHandler(this.btnRules_Click);
-            // 
-            // cBoxEasy
-            // 
-            this.cBoxEasy.AutoSize = true;
-            this.cBoxEasy.Location = new System.Drawing.Point(54, 87);
-            this.cBoxEasy.Name = "cBoxEasy";
-            this.cBoxEasy.Size = new System.Drawing.Size(79, 17);
-            this.cBoxEasy.TabIndex = 108;
-            this.cBoxEasy.Text = "Easy Mode";
-            this.cBoxEasy.UseVisualStyleBackColor = true;
-            this.cBoxEasy.CheckedChanged += new System.EventHandler(this.cBoxEasy_CheckedChanged);
-            // 
-            // cBoxUnique
-            // 
-            this.cBoxUnique.AutoSize = true;
-            this.cBoxUnique.Location = new System.Drawing.Point(54, 121);
-            this.cBoxUnique.Name = "cBoxUnique";
-            this.cBoxUnique.Size = new System.Drawing.Size(104, 17);
-            this.cBoxUnique.TabIndex = 109;
-            this.cBoxUnique.Text = "No color repeats";
-            this.cBoxUnique.UseVisualStyleBackColor = true;
-            this.cBoxUnique.CheckedChanged += new System.EventHandler(this.cBoxUnique_CheckedChanged);
             // 
             // Main
             // 
@@ -531,7 +547,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pBoxRed)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxGreen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxYellow)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBoxWhite)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBoxOrange)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxPurple)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxCyan)).EndInit();
             this.pnlGameControl.ResumeLayout(false);
@@ -562,7 +578,7 @@
         private System.Windows.Forms.PictureBox pBoxRed;
         private System.Windows.Forms.PictureBox pBoxGreen;
         private System.Windows.Forms.PictureBox pBoxYellow;
-        private System.Windows.Forms.PictureBox pBoxWhite;
+        private System.Windows.Forms.PictureBox pBoxOrange;
         internal System.Windows.Forms.PictureBox pBoxPurple;
         private System.Windows.Forms.PictureBox pBoxCyan;
         private System.Windows.Forms.Panel pnlGameControl;
@@ -587,6 +603,7 @@
         private System.Windows.Forms.Button btnRules;
         private System.Windows.Forms.CheckBox cBoxUnique;
         private System.Windows.Forms.CheckBox cBoxEasy;
+        private System.Windows.Forms.ComboBox cmbBoxColorPalette;
     }
 }
 
