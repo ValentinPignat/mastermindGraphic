@@ -31,3 +31,5 @@ F:\MastermindGraph\mastermindGraph\MastermindGraph\obj\Debug\MastermindGraph.csp
 F:\MastermindGraph\mastermindGraph\MastermindGraph\obj\Debug\MastermindGraph.csproj.CoreCompileInputs.cache
 F:\MastermindGraph\mastermindGraph\MastermindGraph\obj\Debug\MastermindGraph.exe
 F:\MastermindGraph\mastermindGraph\MastermindGraph\obj\Debug\MastermindGraph.pdb
+D:\MastermindGraph\mastermindGraph\MastermindGraph\obj\Debug\MastermindGraph.Win.resources
+D:\MastermindGraph\mastermindGraph\MastermindGraph\obj\Debug\MastermindGraph.Loose.resources

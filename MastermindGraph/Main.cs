@@ -13,13 +13,14 @@ using System.Windows.Forms;
 /// TODO:
 /// Changement de langue
 /// Position "absolue ew"
+/// Comment initialisatiosn
+/// Chipi cahapa gif
+/// cat huh gif timer blablab
 /// 
 /// FEATURES:
 /// 
 /// NEXT GIT :
-/// mode facile
-/// une seule couleur 
-/// palette de couleur 
+/// 
 
 
 namespace MastermindGraph
@@ -27,22 +28,24 @@ namespace MastermindGraph
     public partial class Main : Form
     {
 
-        // Declaration constantes 
+        // Initialisation constantes 
         const int NB_TRIES = 10;
-        const int GUESS_SIZE = 40;
-        const int MARGIN_PBOX = 3;
-        const int FB_SIZE = 16;
         const int CODELENGTH_MAX = 6;
         const int CODELENGTH_MIN = 2;
         const int COLOR_POOL_SIZE_MAX = 7;
         const int COLOR_POOL_SIZE_MIN = 2;
+
+        // Constantes dimensions
+        const int GUESS_SIZE = 40;
+        const int MARGIN_PBOX = 3;
+        const int FB_SIZE = 16;
         const int GUESS_CELL_SIZE = 2 * MARGIN_PBOX + GUESS_SIZE;
         const int FB_CELL_SIZE = 2 * MARGIN_PBOX + FB_SIZE;
 
 
-        // Initialisation essais et tableau de couleur
+        // Variables paramètres
         int colorPoolSize = 7;
-        int tryCount = 0;
+        public int tryCount = 0;
         int currentRight = 0;
         int currentWrongPlace = 0;
         int topTlpGuess = 0;
@@ -52,7 +55,7 @@ namespace MastermindGraph
         int cellWidth = 0;
         bool[,] indexVerified = new bool[2, CODELENGTH_MAX];
         Color[] secretCode = new Color[7];
-        bool easyMode = false;
+        
         bool[] unusedColors = new bool[7];
         PictureBox[] colorPbox = new PictureBox[7];
 
@@ -183,7 +186,7 @@ namespace MastermindGraph
                 if (tlpGuess.GetControlFromPosition(i, tryCount).BackColor == secretCode[i])
                 {
                     // Feedback Facile
-                    if (easyMode) {
+                    if (cBoxEasy.Checked) {
                         tlpFeedback.GetControlFromPosition(i, tryCount).BackColor = Color.White;
                     }
 
@@ -217,7 +220,7 @@ namespace MastermindGraph
                         {
 
                             // Feedback Facile
-                            if (easyMode)
+                            if (cBoxEasy.Checked)
                             {
                                 tlpFeedback.GetControlFromPosition(i, tryCount).BackColor = Color.Black;
                             }
@@ -248,16 +251,17 @@ namespace MastermindGraph
             // Victoire -> résultats / message de fin 
             if (currentRight == (int)nudCodeLength.Value)
             {
-                MessageBox.Show("\nBravo!\nVous avez découvert le code en " + (tryCount) + " essais.\n");
+                Win form = new Win(this);
+                form.ShowDialog();
                 EndSpectate();
             }
 
             // Défaite -> résultats / message de fin 
             if (tryCount == 10)
             {
-                
-                MessageBox.Show("Vous avez perdu :<\n");
 
+                Loose form = new Loose(this);
+                form.ShowDialog();
                 EndSpectate();
             }
             EmptyLine();
@@ -558,16 +562,6 @@ namespace MastermindGraph
                 "   - Black: One of your colors is present in the code but not where you placed it\n\n" +
                 "On easy mode the indicators are on the corresponding square where in normal mode their placement don't mean anything.")
                 ;
-        }
-
-        /// <summary>
-        /// Active/Desactive Easy Mode
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void cBoxEasy_CheckedChanged(object sender, EventArgs e)
-        {
-            easyMode = !easyMode;
         }
 
         /// <summary>

@@ -89,7 +89,7 @@
             this.lblMastermind.AutoSize = true;
             this.lblMastermind.Font = new System.Drawing.Font("Impact", 40.25F);
             this.lblMastermind.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lblMastermind.Location = new System.Drawing.Point(217, 17);
+            this.lblMastermind.Location = new System.Drawing.Point(227, 20);
             this.lblMastermind.Name = "lblMastermind";
             this.lblMastermind.Size = new System.Drawing.Size(295, 66);
             this.lblMastermind.TabIndex = 109;
@@ -347,7 +347,6 @@
             this.cBoxEasy.TabIndex = 108;
             this.cBoxEasy.Text = "Easy Mode";
             this.cBoxEasy.UseVisualStyleBackColor = true;
-            this.cBoxEasy.CheckedChanged += new System.EventHandler(this.cBoxEasy_CheckedChanged);
             // 
             // nudColorPoolSize
             // 
@@ -433,38 +432,38 @@
             this.tlpCode.RowCount = 1;
             this.tlpCode.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpCode.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
-            this.tlpCode.Size = new System.Drawing.Size(205, 39);
+            this.tlpCode.Size = new System.Drawing.Size(223, 39);
             this.tlpCode.TabIndex = 119;
             // 
             // pictureBox6
             // 
-            this.pictureBox6.Location = new System.Drawing.Point(139, 3);
+            this.pictureBox6.Location = new System.Drawing.Point(151, 3);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(28, 33);
+            this.pictureBox6.Size = new System.Drawing.Size(30, 30);
             this.pictureBox6.TabIndex = 5;
             this.pictureBox6.TabStop = false;
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Location = new System.Drawing.Point(105, 3);
+            this.pictureBox5.Location = new System.Drawing.Point(114, 3);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(28, 33);
+            this.pictureBox5.Size = new System.Drawing.Size(30, 30);
             this.pictureBox5.TabIndex = 4;
             this.pictureBox5.TabStop = false;
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Location = new System.Drawing.Point(71, 3);
+            this.pictureBox4.Location = new System.Drawing.Point(77, 3);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(28, 33);
+            this.pictureBox4.Size = new System.Drawing.Size(30, 30);
             this.pictureBox4.TabIndex = 3;
             this.pictureBox4.TabStop = false;
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(37, 3);
+            this.pictureBox3.Location = new System.Drawing.Point(40, 3);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(28, 33);
+            this.pictureBox3.Size = new System.Drawing.Size(30, 30);
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
             // 
@@ -472,15 +471,15 @@
             // 
             this.pictureBox2.Location = new System.Drawing.Point(3, 3);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(28, 33);
+            this.pictureBox2.Size = new System.Drawing.Size(30, 30);
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(173, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(188, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(29, 33);
+            this.pictureBox1.Size = new System.Drawing.Size(30, 30);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -499,7 +498,7 @@
             this.pnlCode.Controls.Add(this.tlpCode);
             this.pnlCode.Location = new System.Drawing.Point(6, 27);
             this.pnlCode.Name = "pnlCode";
-            this.pnlCode.Size = new System.Drawing.Size(212, 66);
+            this.pnlCode.Size = new System.Drawing.Size(226, 66);
             this.pnlCode.TabIndex = 121;
             // 
             // ShowCode
