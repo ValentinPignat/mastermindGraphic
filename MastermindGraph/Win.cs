@@ -22,20 +22,24 @@ namespace MastermindGraph
     {
 
         // timer et frames
-        int timer = 0;
-        Image[] chipiFrames = { Properties.Resources.chipi_1, Properties.Resources.chipi_2, Properties.Resources.chipi_3, Properties.Resources.chipi_4, Properties.Resources.chipi_5, Properties.Resources.chipi_6, Properties.Resources.chipi_7, Properties.Resources.chipi_8, Properties.Resources.chipi_9, Properties.Resources.chipi_10, Properties.Resources.chipi_11, Properties.Resources.chipi_12, Properties.Resources.chipi_13, Properties.Resources.chipi_14, Properties.Resources.chipi_15, Properties.Resources.chipi_16, Properties.Resources.chipi_17, Properties.Resources.chipi_18, Properties.Resources.chipi_19, Properties.Resources.chipi_20, Properties.Resources.chipi_21, Properties.Resources.chipi_22, Properties.Resources.chipi_23, Properties.Resources.chipi_24, Properties.Resources.chipi_25, Properties.Resources.chipi_26, Properties.Resources.chipi_27, Properties.Resources.chipi_28, Properties.Resources.chipi_29, Properties.Resources.chipi_30, Properties.Resources.chipi_31, Properties.Resources.chipi_32, Properties.Resources.chipi_33, Properties.Resources.chipi_34, Properties.Resources.chipi_35, Properties.Resources.chipi_36 };
+        int _timer = 0;
+        Image[] _chipiFrames = { Properties.Resources.chipi_1, Properties.Resources.chipi_2, Properties.Resources.chipi_3, Properties.Resources.chipi_4, Properties.Resources.chipi_5, Properties.Resources.chipi_6, Properties.Resources.chipi_7, Properties.Resources.chipi_8, Properties.Resources.chipi_9, Properties.Resources.chipi_10, Properties.Resources.chipi_11, Properties.Resources.chipi_12, Properties.Resources.chipi_13, Properties.Resources.chipi_14, Properties.Resources.chipi_15, Properties.Resources.chipi_16, Properties.Resources.chipi_17, Properties.Resources.chipi_18, Properties.Resources.chipi_19, Properties.Resources.chipi_20, Properties.Resources.chipi_21, Properties.Resources.chipi_22, Properties.Resources.chipi_23, Properties.Resources.chipi_24, Properties.Resources.chipi_25, Properties.Resources.chipi_26, Properties.Resources.chipi_27, Properties.Resources.chipi_28, Properties.Resources.chipi_29, Properties.Resources.chipi_30, Properties.Resources.chipi_31, Properties.Resources.chipi_32, Properties.Resources.chipi_33, Properties.Resources.chipi_34, Properties.Resources.chipi_35, Properties.Resources.chipi_36 };
         
-        public Win(Main game)
+        /// <summary>
+        /// Ecran de victoire
+        /// </summary>
+        /// <param name="tryCount">Nombre d'essai</param>
+        public Win(int tryCount)
         {
             InitializeComponent();
 
             // grammaire pluriel
-            if (game.tryCount == 1) {
-                lblAttemps.Text = ("Congrats! You discovered the code in " + game.tryCount + " try.");
+            if (tryCount == 1) {
+                lblAttemps.Text = ("Congrats! You discovered the code in " + tryCount + " try.");
             }
             else
             {
-                lblAttemps.Text = ("Congrats! You discovered the code in " + game.tryCount + " tries.");
+                lblAttemps.Text = ("Congrats! You discovered the code in " + tryCount + " tries.");
             }
         }
 
@@ -46,13 +50,13 @@ namespace MastermindGraph
         /// <param name="e"></param>
         private void tmrGif_Tick(object sender, EventArgs e)
         {
-            pBoxChipiChapa.Image = chipiFrames[timer];
+            pBoxChipiChapa.Image = _chipiFrames[_timer];
             
-            timer++;
+            _timer++;
 
             // boucle
-            if (timer == chipiFrames.Length) { 
-                timer = 0;
+            if (_timer == _chipiFrames.Length) { 
+                _timer = 0;
             }
      
         }

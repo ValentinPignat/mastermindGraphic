@@ -19,7 +19,11 @@ namespace MastermindGraph
 {
     public partial class Loose : Form
     {
-        public Loose(Main game)
+
+        /// <summary>
+        /// Ecran de défaite
+        /// </summary>
+        public Loose()
         {
             InitializeComponent();
         }

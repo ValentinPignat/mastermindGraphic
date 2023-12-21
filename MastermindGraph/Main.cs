@@ -28,7 +28,7 @@ namespace MastermindGraph
 {
     public partial class Main : Form
     {
-
+        
         // Initialisation constantes 
         const int NB_TRIES = 10;
         const int CODELENGTH_MAX = 6;
@@ -45,19 +45,19 @@ namespace MastermindGraph
 
 
         // Variables initialisations
-        int colorPoolSize = 7;
-        public int tryCount = 0;
-        int currentRight = 0;
-        int currentWrongPlace = 0;
-        int topTlpGuess = 0;
-        int leftTlpGuess = 0;
-        int topTlpFeedback = 0;
-        int leftTlpFeedback = 0;
-        int cellWidth = 0;
-        bool[,] indexVerified = new bool[2, CODELENGTH_MAX];
-        Color[] secretCode = new Color[7];
-        bool[] unusedColors = new bool[7];
-        PictureBox[] colorPbox = new PictureBox[7];
+        int _colorPoolSize = 7;
+        int _tryCount = 0;
+        int _currentRight = 0;
+        int _currentWrongPlace = 0;
+        int _topTlpGuess = 0;
+        int _leftTlpGuess = 0;
+        int _topTlpFeedback = 0;
+        int _leftTlpFeedback = 0;
+        int _cellWidth = 0;
+        bool[,] _indexVerified = new bool[2, CODELENGTH_MAX];
+        Color[] _secretCode = new Color[7];
+        bool[] _unusedColors = new bool[7];
+        PictureBox[] _colorPbox = new PictureBox[7];
 
         // Thèmes
         static readonly Color[] COLOR_POOL_FORMS = { 
@@ -86,7 +86,7 @@ namespace MastermindGraph
             ColorTranslator.FromHtml("#ffc6ff") };
 
         // Thèmes par défaut 
-        Color[] activeColorPool = COLOR_POOL_COLORBLIND;
+        Color[] _activeColorPool = COLOR_POOL_COLORBLIND;
         
         /// <summary>
         /// Main - Démarrage
@@ -104,19 +104,19 @@ namespace MastermindGraph
         private void Main_Load(object sender, EventArgs e)
         {
             // Update la position des éléments
-            topTlpGuess = tlpGuess.Top;
-            leftTlpGuess = tlpGuess.Left;
-            topTlpFeedback = tlpFeedback.Top;
-            leftTlpFeedback = tlpFeedback.Left;
+            _topTlpGuess = tlpGuess.Top;
+            _leftTlpGuess = tlpGuess.Left;
+            _topTlpFeedback = tlpFeedback.Top;
+            _leftTlpFeedback = tlpFeedback.Left;
 
             // Place les boutons de couleur dans un tableau
-            colorPbox[0] = pBoxYellow;
-            colorPbox[1] = pBoxBlack;
-            colorPbox[2] = pBoxRed;
-            colorPbox[3] = pBoxGreen;
-            colorPbox[4] = pBoxOrange;
-            colorPbox[5] = pBoxCyan;
-            colorPbox[6] = pBoxPurple;
+            _colorPbox[0] = pBoxYellow;
+            _colorPbox[1] = pBoxBlack;
+            _colorPbox[2] = pBoxRed;
+            _colorPbox[3] = pBoxGreen;
+            _colorPbox[4] = pBoxOrange;
+            _colorPbox[5] = pBoxCyan;
+            _colorPbox[6] = pBoxPurple;
             
 
             // Palette de couleur par defaut
@@ -154,9 +154,9 @@ namespace MastermindGraph
             // Change la couleur dans la première case vide 
             for (int i = 0; i < nudCodeLength.Value; i++)
             {
-                if (tlpGuess.GetControlFromPosition(i, tryCount).BackColor == Control.DefaultBackColor)
+                if (tlpGuess.GetControlFromPosition(i, _tryCount).BackColor == Control.DefaultBackColor)
                 {
-                    tlpGuess.GetControlFromPosition(i, tryCount).BackColor = color;
+                    tlpGuess.GetControlFromPosition(i, _tryCount).BackColor = color;
 
                     // Submit actif quand la ligne est remplie
                     if (i == nudCodeLength.Value - 1)
@@ -176,34 +176,34 @@ namespace MastermindGraph
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             // Reset 
-            currentRight = 0;
-            currentWrongPlace = 0;
+            _currentRight = 0;
+            _currentWrongPlace = 0;
 
             // Tableau à deux dimension pour verifier les paires trouvé dans l'essai / code
-            indexVerified = new bool[2, CODELENGTH_MAX];
+            _indexVerified = new bool[2, CODELENGTH_MAX];
             for (int i = 0; i < (int)nudCodeLength.Value; i++)
             {
 
                 // Si la couleur est bien placée
-                if (tlpGuess.GetControlFromPosition(i, tryCount).BackColor == secretCode[i])
+                if (tlpGuess.GetControlFromPosition(i, _tryCount).BackColor == _secretCode[i])
                 {
                     // Feedback Facile
                     if (cBoxEasy.Checked) {
-                        tlpFeedback.GetControlFromPosition(i, tryCount).BackColor = Color.White;
+                        tlpFeedback.GetControlFromPosition(i, _tryCount).BackColor = Color.White;
                     }
 
                     // Feedback Normal
                     else
                     {
-                        tlpFeedback.GetControlFromPosition(currentRight, tryCount).BackColor = Color.White;
+                        tlpFeedback.GetControlFromPosition(_currentRight, _tryCount).BackColor = Color.White;
                     }
 
                     // Evite de reverifier comme mal placés
-                    indexVerified[0, i] = true;
-                    indexVerified[1, i] = true;
+                    _indexVerified[0, i] = true;
+                    _indexVerified[1, i] = true;
 
                     // Juste +1
-                    currentRight++;
+                    _currentRight++;
 
                 }
             }
@@ -212,34 +212,34 @@ namespace MastermindGraph
             {
 
                 // Si juste mais pas bien placée
-                if (!indexVerified[0, i])
+                if (!_indexVerified[0, i])
                 {
                     for (int j = 0; j < (int)nudCodeLength.Value; j++)
                     {
 
                         // Si pas deja validé dans le code secret 
-                        if (!indexVerified[1, j] && tlpGuess.GetControlFromPosition(i, tryCount).BackColor == secretCode[j])
+                        if (!_indexVerified[1, j] && tlpGuess.GetControlFromPosition(i, _tryCount).BackColor == _secretCode[j])
                         {
 
                             // Feedback Facile
                             if (cBoxEasy.Checked)
                             {
-                                tlpFeedback.GetControlFromPosition(i, tryCount).BackColor = Color.Black;
+                                tlpFeedback.GetControlFromPosition(i, _tryCount).BackColor = Color.Black;
                             }
 
                             // Feedback Normal
                             else
                             {
-                                tlpFeedback.GetControlFromPosition(currentRight + currentWrongPlace, tryCount).BackColor = Color.Black;
+                                tlpFeedback.GetControlFromPosition(_currentRight + _currentWrongPlace, _tryCount).BackColor = Color.Black;
                             }
                             
 
                             // Evite doublons
-                            indexVerified[0, i] = true;
-                            indexVerified[1, j] = true;
+                            _indexVerified[0, i] = true;
+                            _indexVerified[1, j] = true;
 
                             // Juste +1
-                            currentWrongPlace++;
+                            _currentWrongPlace++;
 
                             break;
                         }
@@ -248,21 +248,21 @@ namespace MastermindGraph
             }
 
             // Essai ++
-            tryCount++;
+            _tryCount++;
 
             // Victoire -> résultats / message de fin 
-            if (currentRight == (int)nudCodeLength.Value)
+            if (_currentRight == (int)nudCodeLength.Value)
             {
-                Win form = new Win(this);
+                Win form = new Win(_tryCount);
                 form.ShowDialog();
                 EndSpectate();
             }
 
             // Défaite -> résultats / message de fin 
-            if (tryCount == 10)
+            if (_tryCount == 10)
             {
 
-                Loose form = new Loose(this);
+                Loose form = new Loose();
                 form.ShowDialog();
                 EndSpectate();
             }
@@ -288,13 +288,13 @@ namespace MastermindGraph
             // Efface la ligne en cours
             for (int i = 0; i < nudCodeLength.Value; i++)
             {
-                tlpGuess.GetControlFromPosition(i, tryCount).BackColor = Control.DefaultBackColor;
-                tlpFeedback.GetControlFromPosition(i, tryCount).BackColor = Color.LightSlateGray;
+                tlpGuess.GetControlFromPosition(i, _tryCount).BackColor = Control.DefaultBackColor;
+                tlpFeedback.GetControlFromPosition(i, _tryCount).BackColor = Color.LightSlateGray;
                 
             }
             
             // Grille vide -> Paramètres accesibles
-            if (tryCount == 0) {
+            if (_tryCount == 0) {
                 pnlParam.Enabled = true;
             }
             EmptyLine();
@@ -338,8 +338,8 @@ namespace MastermindGraph
             Random rnd = new Random();
             for (int i = 0; i < (int)nudCodeLength.Value; i++)
             {
-                int x = rnd.Next(0, colorPoolSize);
-                secretCode[i] = activeColorPool[x];
+                int x = rnd.Next(0, _colorPoolSize);
+                _secretCode[i] = _activeColorPool[x];
             }
         }
 
@@ -349,19 +349,19 @@ namespace MastermindGraph
         private void RandomUniqueCode()
         {
             // Tableau couleur déja utilisée
-            unusedColors = new bool[7];
+            _unusedColors = new bool[7];
 
 
             // Generer Code aléatoire (index aléatoire dans colorPool)
             Random rnd = new Random();
             for (int i = 0; i < (int)nudCodeLength.Value; i++)
             {
-                int x = rnd.Next(0, colorPoolSize);
+                int x = rnd.Next(0, _colorPoolSize);
 
                 // Si la couleur n'est pas encore utilisée
-                if (unusedColors[x] == false) { 
-                    secretCode[i] = activeColorPool[x];
-                    unusedColors[x] = true;
+                if (_unusedColors[x] == false) { 
+                    _secretCode[i] = _activeColorPool[x];
+                    _unusedColors[x] = true;
                 }
 
                 // Si pas ajoutée décremente 
@@ -394,11 +394,11 @@ namespace MastermindGraph
             tlpFeedback.Controls.Clear();
 
             // Modification des deux tableaux, recréations des labels
-            TlpBuild(tlpFeedback, FB_SIZE, topTlpFeedback, leftTlpFeedback, NB_TRIES);
-            TlpBuild(tlpGuess, GUESS_SIZE, topTlpGuess, leftTlpGuess, NB_TRIES);
+            TlpBuild(tlpFeedback, FB_SIZE, _topTlpFeedback, _leftTlpFeedback, NB_TRIES);
+            TlpBuild(tlpGuess, GUESS_SIZE, _topTlpGuess, _leftTlpGuess, NB_TRIES);
             
             // Crée un code aléatoire et essai à 0
-            tryCount = 0;
+            _tryCount = 0;
 
             // Code sans doublons
             if (cBoxUnique.Checked)
@@ -417,7 +417,7 @@ namespace MastermindGraph
             {
                 if (i < (int)nudCodeLength.Value)
                 {
-                    tlpCode.GetControlFromPosition(i, 0).BackColor = secretCode[i];
+                    tlpCode.GetControlFromPosition(i, 0).BackColor = _secretCode[i];
                 }
                 else 
                 {
@@ -460,17 +460,17 @@ namespace MastermindGraph
             {
 
                 // Une cellule de Guess + Une cellule de Feedback
-                cellWidth = GUESS_CELL_SIZE + FB_CELL_SIZE;
+                _cellWidth = GUESS_CELL_SIZE + FB_CELL_SIZE;
             }
             else {
 
                 // Une cellule de Feedback
-                cellWidth = FB_CELL_SIZE;
+                _cellWidth = FB_CELL_SIZE;
             }
 
             // Change largeur hauteur et position
             tlp.Size = new Size((int)nudCodeLength.Value * (pBoxSize + (2 * MARGIN_PBOX)), rows * (GUESS_CELL_SIZE));
-            tlp.Location = new Point(left + (cellWidth * (CODELENGTH_MAX - (int)nudCodeLength.Value)), top);
+            tlp.Location = new Point(left + (_cellWidth * (CODELENGTH_MAX - (int)nudCodeLength.Value)), top);
             
 
             // Boucle pour remplir les cases avec les labels
@@ -510,7 +510,7 @@ namespace MastermindGraph
         {
             
             // Change nombre de couleur 
-            colorPoolSize = (int)nudColorPoolSize.Value;
+            _colorPoolSize = (int)nudColorPoolSize.Value;
 
             // Désactive/Réactive les boutons //https://stackoverflow.com/questions/19775851/ability-to-find-winform-control-via-the-tag-property     
             for (int i = COLOR_POOL_SIZE_MIN; i < COLOR_POOL_SIZE_MAX; i++)
@@ -519,10 +519,10 @@ namespace MastermindGraph
                 foreach (PictureBox c in pnlColor.Controls)
                 {
                     // Trouve bouton selon les couleurs
-                    if (c.BackColor == activeColorPool[i]) {
+                    if (c.BackColor == _activeColorPool[i]) {
 
                         // Si plus haut que nombre de couleurs -> Disabled et hachuré
-                        if (i >= colorPoolSize) {
+                        if (i >= _colorPoolSize) {
                             c.Enabled = false;
                             c.Image = MastermindGraph.Properties.Resources.crossed;
                         }
@@ -608,19 +608,19 @@ namespace MastermindGraph
             switch (cmbBoxColorPalette.SelectedIndex) {
 
                 case 0:
-                    activeColorPool = COLOR_POOL_FORMS;
+                    _activeColorPool = COLOR_POOL_FORMS;
                     break;
                 case 2:
-                    activeColorPool = COLOR_POOL_PASTEL;
+                    _activeColorPool = COLOR_POOL_PASTEL;
                     break;
                 default:
-                    activeColorPool = COLOR_POOL_COLORBLIND;
+                    _activeColorPool = COLOR_POOL_COLORBLIND;
                     break;
             }
 
             // Actualise la palette de couleur 
             for (int i = 0; i < COLOR_POOL_SIZE_MAX; i++) {
-                colorPbox[i].BackColor = activeColorPool[i];
+                _colorPbox[i].BackColor = _activeColorPool[i];
             }
 
             // Relance une partie avec les nouveaux paramètres
