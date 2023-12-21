@@ -33,3 +33,4 @@ F:\MastermindGraph\mastermindGraph\MastermindGraph\obj\Debug\MastermindGraph.exe
 F:\MastermindGraph\mastermindGraph\MastermindGraph\obj\Debug\MastermindGraph.pdb
 D:\MastermindGraph\mastermindGraph\MastermindGraph\obj\Debug\MastermindGraph.Win.resources
 D:\MastermindGraph\mastermindGraph\MastermindGraph\obj\Debug\MastermindGraph.Loose.resources
+D:\MastermindGraph\mastermindGraph\MastermindGraph\obj\Debug\MastermindGraph.Rules.resources

@@ -12,30 +12,30 @@ using System.Windows.Forms;
 /// GitHub : https://github.com/ValentinPignat/mastermindGraphic
 /// 
 /// TODO:
-/// Changement de langue
 /// Position "absolue" ew
-/// Comment initialisatiosn
-/// variables private commence par _
-/// 
 /// 
 /// FEATURES:
 /// 
 /// NEXT GIT :
-/// chipichapa
+/// 
+/// Form instead of messagebox (Rules, Victory, Defeat)
+/// Correction du code
 
 
 namespace MastermindGraph
 {
     public partial class Main : Form
     {
-        
+
+        #region Initialisations
+
         // Initialisation constantes 
         const int NB_TRIES = 10;
         const int CODELENGTH_MAX = 6;
         const int CODELENGTH_MIN = 2;
         const int COLOR_POOL_SIZE_MAX = 7;
         const int COLOR_POOL_SIZE_MIN = 2;
-
+        
         // Constantes dimensions
         const int GUESS_SIZE = 40;
         const int MARGIN_PBOX = 3;
@@ -87,7 +87,8 @@ namespace MastermindGraph
 
         // Thèmes par défaut 
         Color[] _activeColorPool = COLOR_POOL_COLORBLIND;
-        
+        #endregion
+
         /// <summary>
         /// Main - Démarrage
         /// </summary>
@@ -121,7 +122,6 @@ namespace MastermindGraph
 
             // Palette de couleur par defaut
             cmbBoxColorPalette.SelectedIndex = 1;
-            cmbBoxColorPalette_SelectedIndexChanged(this, e);
 
             // Changement de couleur du Titre
             lblMastermind.ForeColor = ColorTranslator.FromHtml("#2c4875");
@@ -555,15 +555,15 @@ namespace MastermindGraph
             pnlCode.Visible = !pnlCode.Visible;
         }
 
+        /// <summary>
+        /// Ouvre une page avec les règles
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRules_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Mastermind rules:\n\n" +
-                "Try to guess the secret code by trying color sequences.\n\n" +
-                "On the right you will receive feedback after each try:\n" +
-                "   - White: One of your colors is well placed\n" +
-                "   - Black: One of your colors is present in the code but not where you placed it\n\n" +
-                "On easy mode the indicators are on the corresponding square where in normal mode their placement don't mean anything.")
-                ;
+            Rules form = new Rules();
+            form.ShowDialog();
         }
 
         /// <summary>
