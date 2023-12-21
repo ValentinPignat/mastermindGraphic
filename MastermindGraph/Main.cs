@@ -9,18 +9,19 @@ using System.Windows.Forms;
 /// Author : Valentin Pignat
 /// Date (Creation) : 16.11.2023
 /// Description : Mastermind avec interface grapgique (Windows Forms) 
+/// GitHub : https://github.com/ValentinPignat/mastermindGraphic
 /// 
 /// TODO:
 /// Changement de langue
-/// Position "absolue ew"
+/// Position "absolue" ew
 /// Comment initialisatiosn
-/// Chipi cahapa gif
-/// cat huh gif timer blablab
+/// variables private commence par _
+/// 
 /// 
 /// FEATURES:
 /// 
 /// NEXT GIT :
-/// 
+/// chipichapa
 
 
 namespace MastermindGraph
@@ -43,7 +44,7 @@ namespace MastermindGraph
         const int FB_CELL_SIZE = 2 * MARGIN_PBOX + FB_SIZE;
 
 
-        // Variables paramètres
+        // Variables initialisations
         int colorPoolSize = 7;
         public int tryCount = 0;
         int currentRight = 0;
@@ -55,7 +56,6 @@ namespace MastermindGraph
         int cellWidth = 0;
         bool[,] indexVerified = new bool[2, CODELENGTH_MAX];
         Color[] secretCode = new Color[7];
-        
         bool[] unusedColors = new bool[7];
         PictureBox[] colorPbox = new PictureBox[7];
 
@@ -84,6 +84,8 @@ namespace MastermindGraph
             ColorTranslator.FromHtml("#9bf6ff"),
             ColorTranslator.FromHtml("#a0c4ff"), 
             ColorTranslator.FromHtml("#ffc6ff") };
+
+        // Thèmes par défaut 
         Color[] activeColorPool = COLOR_POOL_COLORBLIND;
         
         /// <summary>

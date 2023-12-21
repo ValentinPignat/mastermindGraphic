@@ -50,9 +50,9 @@
             // pBoxHuh
             // 
             this.pBoxHuh.Image = ((System.Drawing.Image)(resources.GetObject("pBoxHuh.Image")));
-            this.pBoxHuh.Location = new System.Drawing.Point(473, 12);
+            this.pBoxHuh.Location = new System.Drawing.Point(468, 24);
             this.pBoxHuh.Name = "pBoxHuh";
-            this.pBoxHuh.Size = new System.Drawing.Size(334, 556);
+            this.pBoxHuh.Size = new System.Drawing.Size(306, 394);
             this.pBoxHuh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pBoxHuh.TabIndex = 1;
             this.pBoxHuh.TabStop = false;
@@ -78,6 +78,7 @@
             this.Controls.Add(this.pBoxHuh);
             this.Controls.Add(this.lblLoose);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Loose";
             this.Text = "Defeat !";
             ((System.ComponentModel.ISupportInitialize)(this.pBoxHuh)).EndInit();

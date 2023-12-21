@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.lblMastermind = new System.Windows.Forms.Label();
             this.tlpGuess = new System.Windows.Forms.TableLayoutPanel();
             this.tlpFeedback = new System.Windows.Forms.TableLayoutPanel();
@@ -538,6 +539,7 @@
             this.Controls.Add(this.pnlColor);
             this.Controls.Add(this.lblMastermind);
             this.Controls.Add(this.tlpGuess);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
             this.Text = "Mastermind";
             this.Load += new System.EventHandler(this.Main_Load);

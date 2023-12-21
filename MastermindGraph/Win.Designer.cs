@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Win));
             this.lblWin = new System.Windows.Forms.Label();
             this.pBoxChipiChapa = new System.Windows.Forms.PictureBox();
             this.lblAttemps = new System.Windows.Forms.Label();
+            this.tmrGif = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pBoxChipiChapa)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,12 +51,13 @@
             // 
             this.pBoxChipiChapa.Image = ((System.Drawing.Image)(resources.GetObject("pBoxChipiChapa.Image")));
             this.pBoxChipiChapa.InitialImage = null;
-            this.pBoxChipiChapa.Location = new System.Drawing.Point(38, 153);
+            this.pBoxChipiChapa.Location = new System.Drawing.Point(103, 158);
             this.pBoxChipiChapa.Name = "pBoxChipiChapa";
-            this.pBoxChipiChapa.Size = new System.Drawing.Size(723, 345);
+            this.pBoxChipiChapa.Size = new System.Drawing.Size(569, 280);
             this.pBoxChipiChapa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pBoxChipiChapa.TabIndex = 1;
             this.pBoxChipiChapa.TabStop = false;
+            this.pBoxChipiChapa.Click += new System.EventHandler(this.pBoxChipiChapa_Click);
             // 
             // lblAttemps
             // 
@@ -66,6 +69,12 @@
             this.lblAttemps.TabIndex = 2;
             this.lblAttemps.Text = "Congrats! You discovered the code in 0 tries.";
             // 
+            // tmrGif
+            // 
+            this.tmrGif.Enabled = true;
+            this.tmrGif.Interval = 50;
+            this.tmrGif.Tick += new System.EventHandler(this.tmrGif_Tick);
+            // 
             // Win
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -76,6 +85,7 @@
             this.Controls.Add(this.pBoxChipiChapa);
             this.Controls.Add(this.lblWin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Win";
             this.Text = "Victory !";
             ((System.ComponentModel.ISupportInitialize)(this.pBoxChipiChapa)).EndInit();
@@ -89,5 +99,6 @@
         private System.Windows.Forms.Label lblWin;
         private System.Windows.Forms.PictureBox pBoxChipiChapa;
         private System.Windows.Forms.Label lblAttemps;
+        private System.Windows.Forms.Timer tmrGif;
     }
 }
