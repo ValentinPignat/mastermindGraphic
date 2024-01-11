@@ -1,33 +1,18 @@
-﻿using System;
-using System.Drawing;
-using System.Linq;
-using System.Windows.Forms;
-
-
-
-/// ETML
+﻿/// ETML
 /// Author : Valentin Pignat
 /// Date (Creation) : 16.11.2023
 /// Description : Mastermind avec interface grapgique (Windows Forms) 
 /// GitHub : https://github.com/ValentinPignat/mastermindGraphic
-/// 
-/// TODO:
-/// Position "absolue" ew
-/// 
-/// FEATURES:
-/// 
-/// NEXT GIT :
-/// 
-/// Form instead of messagebox (Rules, Victory, Defeat)
-/// Correction du code
 
+using System;
+using System.Drawing;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace MastermindGraph
 {
     public partial class Main : Form
     {
-
-        #region Initialisations
 
         // Initialisation constantes 
         const int NB_TRIES = 10;
@@ -87,7 +72,6 @@ namespace MastermindGraph
 
         // Thèmes par défaut 
         Color[] _activeColorPool = COLOR_POOL_COLORBLIND;
-        #endregion
 
         /// <summary>
         /// Main - Démarrage
@@ -486,6 +470,7 @@ namespace MastermindGraph
                     newPBox.Anchor = AnchorStyles.None;
 
                     // Par defaut la couleur se calque sur le backcolor du Main
+                    // Changement de la couleur de fonds des pBox
                     if (tlp == tlpGuess)
                     {
                         newPBox.BackColor = DefaultBackColor;

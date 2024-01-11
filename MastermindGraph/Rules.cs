@@ -1,4 +1,9 @@
-﻿using System;
+﻿/// ETML
+/// Author : Valentin Pignat
+/// Date (Creation) : 21.12.2023
+/// Description : Affiche un formulaire avec des règles
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;

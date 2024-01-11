@@ -38,11 +38,11 @@
             // lblLoose
             // 
             this.lblLoose.AutoSize = true;
-            this.lblLoose.Font = new System.Drawing.Font("OCR A Extended", 40F, System.Drawing.FontStyle.Bold);
+            this.lblLoose.Font = new System.Drawing.Font("OCR A Extended", 35F, System.Drawing.FontStyle.Bold);
             this.lblLoose.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblLoose.Location = new System.Drawing.Point(97, 117);
+            this.lblLoose.Location = new System.Drawing.Point(56, 116);
             this.lblLoose.Name = "lblLoose";
-            this.lblLoose.Size = new System.Drawing.Size(297, 57);
+            this.lblLoose.Size = new System.Drawing.Size(254, 49);
             this.lblLoose.TabIndex = 0;
             this.lblLoose.Text = "Defeat !";
             this.lblLoose.UseMnemonic = false;
@@ -50,7 +50,7 @@
             // pBoxHuh
             // 
             this.pBoxHuh.Image = ((System.Drawing.Image)(resources.GetObject("pBoxHuh.Image")));
-            this.pBoxHuh.Location = new System.Drawing.Point(468, 24);
+            this.pBoxHuh.Location = new System.Drawing.Point(361, 32);
             this.pBoxHuh.Name = "pBoxHuh";
             this.pBoxHuh.Size = new System.Drawing.Size(306, 394);
             this.pBoxHuh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -60,11 +60,11 @@
             // lblBetterLuck
             // 
             this.lblBetterLuck.AutoSize = true;
-            this.lblBetterLuck.Font = new System.Drawing.Font("OCR A Extended", 20F);
+            this.lblBetterLuck.Font = new System.Drawing.Font("OCR A Extended", 16F);
             this.lblBetterLuck.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblBetterLuck.Location = new System.Drawing.Point(41, 259);
+            this.lblBetterLuck.Location = new System.Drawing.Point(21, 225);
             this.lblBetterLuck.Name = "lblBetterLuck";
-            this.lblBetterLuck.Size = new System.Drawing.Size(397, 29);
+            this.lblBetterLuck.Size = new System.Drawing.Size(322, 24);
             this.lblBetterLuck.TabIndex = 2;
             this.lblBetterLuck.Text = "Better luck next time :>";
             // 
@@ -73,13 +73,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(697, 450);
             this.Controls.Add(this.lblBetterLuck);
             this.Controls.Add(this.pBoxHuh);
             this.Controls.Add(this.lblLoose);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Loose";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Defeat !";
             ((System.ComponentModel.ISupportInitialize)(this.pBoxHuh)).EndInit();
             this.ResumeLayout(false);

@@ -1,4 +1,10 @@
-﻿using System;
+﻿/// ETML
+/// Author : Valentin Pignat
+/// Date (Creation) : 18.12.2023
+/// Description : Formulaire de victoire
+/// Note : Les implémentations concernant l'affichage du Gif sont inutiles étant donné que Windows Forms gère les GIF
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,14 +13,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
-
-/// ETML
-/// Author : Valentin Pignat
-/// Date (Creation) : 18.12.2023
-/// Description : Formulaire de victoire
-/// Note : Les implémentations concernant l'affichage du Gif sont inutiles étant donné que Windows Forms gère les GIF
-
 
 namespace MastermindGraph
 {

@@ -89,7 +89,7 @@
             // 
             this.lblMastermind.AutoSize = true;
             this.lblMastermind.Font = new System.Drawing.Font("Impact", 40.25F);
-            this.lblMastermind.ForeColor = System.Drawing.Color.SeaGreen;
+            this.lblMastermind.ForeColor = System.Drawing.Color.DarkBlue;
             this.lblMastermind.Location = new System.Drawing.Point(227, 20);
             this.lblMastermind.Name = "lblMastermind";
             this.lblMastermind.Size = new System.Drawing.Size(295, 66);
@@ -317,6 +317,7 @@
             // cmbBoxColorPalette
             // 
             this.cmbBoxColorPalette.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.RecentlyUsedList;
+            this.cmbBoxColorPalette.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBoxColorPalette.FormattingEnabled = true;
             this.cmbBoxColorPalette.Items.AddRange(new object[] {
             "Forms",
